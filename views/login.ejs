@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title>IRMS</title>
+    <link rel="stylesheet" href="/static/css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="row-mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card-card-body">
+        <img src="/static/css/images.jfif" class="avatar">
+        
+        <h1 class="title"> UWC </h1>
+        <h1 class="title"> Institutional Repository Metadata System </h1>
+        <h1 class="title"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+        <p><% include ./partials/messages %></p>
+        <form action="/users/login" method="POST">
+          <div class="form-group">
+            
+            <p>Email</p>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter Email"
+            />
+          </div>
+          <div class="form-group">
+            <p>Password</p>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Enter Password"
+            />
+          </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <p class="lead-mt-4">
+          No Account? <a href="/users/register">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+
+

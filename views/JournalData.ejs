@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    
+
+
+    <meta charset="utf-8">
+    <title>IRMS</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      
+      <div class="left_area">
+        <h3>UWC <span>Institutional Repository Metadata</span></h3>
+      </div>
+      <div class="right_area">
+        <a href="/users/logout" class="logout_btn">Logout</a>
+      </div>
+
+
+    
+
+
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    
+    <!--sidebar end-->
+
+
+    <section class="content1">
+      <div class= "heading"> 
+       <h1>
+        <% PublicationsTable.forEach(function(pub){ %>
+          <%= pub.Title %>
+        
+        <% }); %>
+      </h1>
+
+      
+      <div class="wrapper">
+    
+        <div class="right">
+            <div class="info">
+               
+                <div class="info_data">
+                     <div class="data">
+                        <h4>Author Name</h4>
+                        <p>
+                          <% PublicationsTable.forEach(function(pub){ %>
+                            <%= pub.Author %>
+                          
+                          <% }); %>
+
+                        </p>
+                     </div>
+                     <div class="data">
+                       <h4>Other Authors</h4>
+                        <p>
+                          <% PublicationsTable.forEach(function(pub){ %>
+                            <%= pub.Authors %>
+                          
+                          <% }); %>
+                        </p>
+                  </div>
+                </div>
+            </div>
+          
+          <div class="projects">
+                
+                <div class="projects_data">
+                     <div class="data">
+                        <h4>Publication Year</h4>
+                        <p>
+                          <% PublicationsTable.forEach(function(pub){ %>
+                            <%= pub.Year %>
+                          
+                          <% }); %>
+                        </p>
+                     </div>
+                     <div class="data">
+                       <h4>Title</h4>
+                        <p>
+                          <% PublicationsTable.forEach(function(pub){ %>
+                            <%= pub.Title %>
+                          
+                          <% }); %>
+
+                        </p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="projects">
+                
+              <div class="projects_data">
+                   <div class="data">
+                      <h4>Publisher</h4>
+                      <p>
+                        <% PublicationsTable.forEach(function(pub){ %>
+                          <%= pub.Publisher %>
+                        
+                        <% }); %>
+
+                      </p>
+                   </div>
+                   <div class="data">
+                     <h4>Volume</h4>
+                      <p>
+                        <% PublicationsTable.forEach(function(pub){ %>
+                          <%= pub.Volume %>
+                        
+                        <% }); %>
+                      </p>
+                </div>
+              </div>
+          </div>
+
+          <div class="projects">
+                
+            <div class="projects_data">
+                 <div class="data">
+                    <h4>Type of Publication</h4>
+                    <p>
+                      <% PublicationsTable.forEach(function(pub){ %>
+                        <%= pub.TypeOfPublication %>
+                      
+                      <% }); %>
+                    </p>
+                 </div>
+                 
+            </div>
+        </div>
+          
+            
+        </div>
+    </div>
+
+       
+
+    </section>
+
+  </body>
+</html>

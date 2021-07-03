@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>IRMS</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>UWC <span>Institutional Repository Metadata</span></h3>
+      </div>
+      <div class="right_area">
+        <a href="/users/logout" class="logout_btn">Logout</a>
+      </div>
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+
+      <a href="Dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <h3>Browse By :</h3>
+      <a href="authorBrowse"><i class="fas fa-user"></i><span>Author</span></a>
+      <a href="proceedingBrowse"><i class="fas fa-book"></i><span>Conference</span></a>
+      <a href="journalBrowse"><i class="fas fa-th"></i><span>Journals</span></a>
+      <a href="bookBrowse"><i class="fas fa-book"></i><span>Books</span></a>
+      <a href="fileUpload"><i class="fas fa-sliders-h"></i><span>Upload DHET File</span></a>
+    </div>
+    <!--sidebar end-->
+
+    <section class="content">
+      <div class= "heading"> 
+        <h1>Browsing By Journals</h1>
+        <p>Below you have the list of University of the Western cape Journals produced by the institution, you  
+can select any Journal below to view its metadata</p>
+      
+
+        <div class = "author-list">
+            <h3>List of the Conference Proceedings</h3>
+            <div id="table-scroll">
+            <ol>
+                <% PublicationsTable.forEach(function(pub){ %>
+                  <li> <a href="journalBrowse/<%= pub.Title %>" > <%= pub.Title %> </a> </li>
+                <% }); %>
+            
+          </ol>
+        </div>
+
+
+    </section>
+
+  </body>
+</html>

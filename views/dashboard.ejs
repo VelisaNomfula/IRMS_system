@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>IRMS</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+    <div class ="container-head">    
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>UWC <span>Institutional Repository Metadata</span></h3>
+      </div>
+      <div class="right_area">
+        <a href="/users/logout"  class="logout_btn">Logout</a>
+
+        
+      </div>
+
+      <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	    <script>
+		    $(document).ready(function(){
+			  $(".notification_icon .fa-bell").click(function(){
+				  $(".dropdown").toggleClass("active");
+			  })
+		    });
+      </script>
+      
+    </div>
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        
+
+      <a href="Dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <h3>Browse By :</h3>
+      <a href="authorBrowse"><i class="fas fa-user"></i><span>Author</span></a>
+      <a href="proceedingBrowse"><i class="fas fa-book"></i><span>Conference</span></a>
+      <a href="journalBrowse"><i class="fas fa-th"></i><span>Journals</span></a>
+      <a href="bookBrowse"><i class="fas fa-book"></i><span>Books</span></a>
+      <a href="fileUpload"><i class="fas fa-sliders-h"></i><span>Upload DHET File</span></a>
+    </div>
+
+   
+    <!--sidebar end-->
+
+    <section class="content">
+      <div class= "heading"> 
+        <h1>Dashboard</h1>
+        <p>Welcome to the University  of the Western cape Institutional repository metadata system. 
+This is the virtual warehouse of UWC academic publication that archive and track  institution publications.</p>
+
+
+        <div id="table-scroll">
+          <table>
+
+            <tr>
+              <th>Author</th>
+              <th>Authors</th>
+              <th>Year</th>
+              <th>Title</th>
+              <th>Volume</th>
+              <th>No of Authors</th>
+              <th>Publisher</th>
+              <th>Issue Number</th>
+              <th>DOI</th>
+              <th>Type of Publication</th>
+            </tr>
+
+            <% Publications.forEach(function(pub){ %>
+              <tr>
+                  <td><%= pub.Author %></td>
+                  <td><%= pub.Authors %></td>
+                  <td><%= pub.Year %></td>
+                  <td><%= pub.Title %></td>
+                  <td><%= pub.Volume %></td>
+                  <td><%- pub.NoOfAuthors %></td>
+                  <td><%- pub.Publisher %></td>
+                  <td><%- pub.IssueNumber %></td>
+                  <td><%- pub.DOI %></td>
+                  <td><%- pub.TypeOfPublication %></td>
+              </tr>
+            <% }); %>
+                
+              
+
+            
+          
+
+
+          </table>
+        </div>
+
+      </div> 
+
+      <div class="wrapper">
+        <div class="notification_wrap">
+          <div class="notification_icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <div class="dropdown">
+            <div class="notify_item">
+              
+              <div class="notify_info">
+                <p>Type of Publication : <span>Timeline Share</span></p>
+                <p>Title : <span>Profile Picture</span></p>
+                <span class="notify_time">10 minutes ago</span>
+              </div>
+            </div>
+            <div class="notify_item">
+              
+              <div class="notify_info">
+                <p>Type of Publication : <span>Timeline Share</span></p>
+                <p>Title : <span>Profile Picture</span></p>
+                <span class="notify_time">55 minutes ago</span>
+              </div>
+            </div>
+            <div class="notify_item">
+              
+              <div class="notify_info">
+                <p>Type of Publication : <span>Cover Picture</span></p>
+                <p>Title : <span>Profile Picture</span></p>
+                <span class="notify_time">2 hours ago</span>
+              </div>
+            </div>
+            <div class="notify_item">
+              
+              <div class="notify_info">
+                <p>Type of Publication : <span>Profile Picture</span></p>
+                <p>Title : <span>Profile Picture</span></p>
+                <span class="notify_time">6 hours ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </body>
+</html>
